@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Telefon Rehberi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./CSS/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+
+        <section class="sectionLeft">
+            <div class="telefonRehberi">Telefon Rehberi</div>
+            <div class="search_yenikayit">
+
+
+                <div class="search">
+                    <form class="formSearch">
+                        <input class="inputSearch" type="text" placeholder="Search.." />
+                        <button class="buttonSearch" type="submit">🔎</button>
+                    </form>
+                </div>
+                <div class="yeniKayit">
+                    <button id="yeniKayit">Yeni Kayit</button>
+                </div>
+
+
+            </div>
+            <table>
+                <tr>
+                    <th class="siralamaIsim">Firstname</th>
+                    <th class="siralamaSoyIsim">Lastname</th>
+                    <th>Address</th>
+                    <th>Number</th>
+                    <th>Zip Code</th>
+                    <th>City</th>
+                    <th>Phone Number</th>
+                    <th>Mobile Number</th>
+                    <th>Fax Number</th>
+                    <th>Email</th>
+                </tr>
+                <tr id="rehberListe_area td">
+                    
+                </tr>
+
+                <tr>
+                    <td>Sukru</td>
+                    <td>UNLU</td>
+                    <td>Chemin des Ramiers</td>
+                    <td>11</td>
+                    <td>1022</td>
+                    <td>Chavannes-près-Renens</td>
+                    <td>0041 21 691 09 15</td>
+                    <td>0041 76 575 09 15</td>
+                    <td>0041 21 691 09 15</td>
+                    <td>suisse1022@gmail.com</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="sectionRight">
+            <div class="formudoldur">
+                <div>
+                    <label for="firstname">Firstname</label>
+                    <input id="firstname" name="firstname" value="" type="text" />
+                </div>
+                <div>
+                    <label for="lastname">Lastname</label>
+                    <input id="lastname" name="lastname" value="" type="text" />
+                </div>
+                <div>
+                    <label for="address">Address</label>
+                    <input id="address" name="address" value="" type="text" />
+                    <button id="moreTextArea">⨁</button>
+                    <label for="number">Number</label>
+                    <input id="number" name="number" value="" type="number" />
+                    <button id="moreTextArea">⨁</button>
+                </div>
+                <div>
+                    <label for="zipcode">Zip Code</label>
+                    <input id="zipcode" name="zipcode" value="" type="number" />
+                    <label for="city">City</label>
+                    <input id="city" name="city" value="" type="text" />
+
+                </div>
+                <div>
+                    <label for="phonenumber">Phone Number</label>
+                    <input id="phonenumber" name="phoneNumber" value="" type="number" />
+                    <button id="moreTextArea">⨁</button>
+                </div>
+                <div>
+                    <label for="mobilephonenumber">Mobile Phone Number</label>
+                    <input id="mobilephonenumber" name="mobilephoneNumber" value="" type="number" />
+                    <button id="moreTextArea">⨁</button>
+                </div>
+                <div>
+                    <label for="faxnumber">Fax Number</label>
+                    <input id="faxnumber" name="faxnumber" value="" type="number" />
+                    <button id="moreTextArea">⨁</button>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" value="" type="text" />
+                    <button id="moreTextArea">⨁</button>
+                </div>
+            </div>
+            <div id="kaydetSil">
+                <button id="kaydet">Kaydet</button>
+                <button id="sil">Sil</button>
+            </div>
+
+        </section>
+    </main>
+    <script src="./JS/model.js"></script>
+    <script src="./JS/storage.js"></script>
+    <script src="./JS/controller.js"></script>
+</body>
+
+</html>

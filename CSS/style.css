@@ -1,0 +1,284 @@
+main {
+    display: flex;
+    width: 100%;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sectionLeft {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0.2%;
+    margin-top: 2%;
+}
+
+.telefonRehberi {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 3em;
+    color: rgb(31, 30, 30);
+    margin-bottom: 3%;
+    flex-wrap: wrap;
+}
+
+.search_yenikayit {
+    display: flex;
+    align-items: center;
+    width: 98%;
+    margin-bottom: 3%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.formSearch {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputSearch {
+    display: flex;
+    width: 75%;
+    font-size: 2em;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    flex-wrap: wrap;
+    padding: 2%;
+}
+
+.buttonSearch {
+    display: flex;
+    width: 18%;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 2%;
+    font-size: 2em;
+    flex-wrap: wrap;
+}
+.buttonSearch:hover{
+    cursor: pointer;
+    
+}
+
+.yeniKayit {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#yeniKayit {
+    display: flex;
+    width: 40%;
+    color: white;
+    height: 150%;
+    font-size: 1.5em;
+    justify-content: center;
+    border-radius: 9px;
+    border: 1px solid rgb(143, 145, 143);
+    background-color: #58B856;
+    padding: 4%;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#yeniKayit:hover{
+    cursor: pointer;
+    color: #0000ff;
+    background-color: hsl(240, 20%, 99%);
+
+}
+
+table {
+    width: 98%;
+    table-layout: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-collapse: collapse;
+    border: 1px solid gray;
+    margin-top: 20px;
+}
+
+tr:hover {
+    background-color: #0000ff;
+    color: white;
+    transition: all 0.3s
+}
+
+tr:nth-child(odd):hover {
+    background-color: blue;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(217, 238, 153);
+    color: gray;
+}
+
+th:hover {
+    background-color: blue;
+    color: white;
+    transition: all 0.3s
+}
+
+th {
+    border: 1px solid rgb(149, 196, 9);
+    height: 80px;
+    padding: 10px;
+    background-color: #A7C941;
+    color: white;
+    text-align: left;
+    white-space: wrap;
+}
+
+td {
+    border: 1px solid #A7C941;
+    padding: 10px;
+}
+
+
+
+.sectionRight {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 96%;
+    padding: 1%;
+    margin: 0.5%;
+    margin-top: 2%;
+    color: rgb(105, 103, 103);
+    align-items: center;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.formudoldur {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 95%;
+    padding: 1%;
+    margin: 0.5%;
+    margin-top: 4%;
+    align-items: flex-start;
+}
+
+.formudoldur div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.formudoldur label {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.formudoldur input {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    padding: 3%;
+    flex-wrap: wrap;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid rgb(143, 145, 143);
+}
+.formudoldur input:hover{
+    background-color: blue;
+    color: white;
+
+}
+
+
+
+#moreTextArea {
+    display: flex;
+    background-color: rgb(161, 229, 238);
+    font-size: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(143, 145, 143);
+}
+#moreTextArea:hover{
+    cursor: pointer;
+    color: #0000ff;
+    background-color: hsl(240, 20%, 99%);
+
+}
+
+
+#kaydetSil {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+#kaydet {
+    display: flex;
+    width: 40%;
+    color: rgb(235, 226, 226);
+    height: 150%;
+    font-size: 1.5em;
+    
+    border-radius: 9px;
+    border: 1px solid rgb(143, 145, 143);
+    background-color: hsl(221, 94%, 50%);
+    padding: 4%;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#kaydet:hover{
+cursor: pointer;
+    color: #0000ff;
+    background-color: hsl(240, 20%, 99%);
+}
+
+
+#sil {
+    display: flex;
+    width: 40%;
+    color: white;
+    height: 150%;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 9px;
+    border: 1px solid rgb(143, 145, 143);
+    background-color: rgb(252, 4, 4);
+    padding: 4%;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#sil:hover {
+    cursor: pointer;
+    color: #0000ff;
+    background-color: hsl(240, 20%, 99%);
+
+}
