@@ -7,19 +7,13 @@
  * arama
  */
 
-
-
-
-
- 
-
 function bilgileriTopla (birKisi){
     let formListeStringi = localStorage.getItem ("kisiBilgileriListesi");
     let formListe =JSON.parse (formListeStringi);
     if (formListe == undefined){
         formListe = new Array();
     }
-    formListe.puch({
+    formListe.values({
         "firstname":birKisi, "lastname":birKisi, "address":birKisi, "number":birKisi,
         "zipcode":birKisi, "city":birKisi, "phonenumber":birKisi, "mobilephonenumber":birKisi,
         "faxnumber":birKisi, "email":birKisi

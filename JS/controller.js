@@ -23,46 +23,59 @@
  * formdan veriAl fonksiyonu
  */
 
-function renderList (bilgiListesi){
-    let tdList = bilgiListesi.map ((bilgiObject)=>`<td data-name ="${bilgiObject.name}">
+function renderList(bilgiListesi) {
+    let tdList = bilgiListesi.map((bilgiObject) => `<td data-name ="${bilgiObject.name}">
     ${bilgiObject.name}</td>`);
-    $("#rehberListe_area td").html(tdList.join(""));
+    $("#rehberListe_area ").html(tdList.join(""));
 }
-
-
-
 
 $(document).ready(function () {
 
-    $("#yeniKayit").on("click", function(){
-        $('#firstname').attr("autofocus", "autofocus")
-    })
+            $("#yeniKayit").on("click", function () {
+                $('#firstname').attr("autofocus", "autofocus")
+            })
 
-    $("#kaydet").on("click", function () {
-        //alanlar doluysa bosalt ??
-        let rehberBilgileri = $("#firstname", "#lastname", "#address", "#number", "#zipcode", "#city", 
-        "#phonenumber", "#mobilephonenumber", "#faxnumber", "#email").val();
-        let formListe = bilgileriTopla(rehberBilgileri)
+            $("#kaydet").on("click", function () {
+                //alanlar doluysa bosalt ??
+                let rehberBilgileri = $("#firstname", "#lastname", "#address", "#number", "#zipcode", "#city",
+                    "#phonenumber", "#mobilephonenumber", "#faxnumber", "#email").val("");
 
-        return renderList (formListe);
-        
-    })
-    
-    
-   
-    $("#sil").on("click", function () {
+                $("#firstname", "#lastname", "#address", "#number", "#zipcode", "#city",
+                    "#phonenumber", "#mobilephonenumber", "#faxnumber", "#email").val("");
 
-    })
-    $(".buttonSearch").on("click", function () {
+                let formListe = bilgileriTopla(rehberBilgileri)
 
-    })
-    $(".siralamaIsim", "siralamaSoyIsim").on("click", function () {
+                return renderList(formListe);
 
-    })
-    $("kontaklariGoster").on("click", function () {
+            })
 
-    })
-    //$("formdanVeriAl").on("click", () => {
+           
 
-    //})
-});
+
+
+
+   $("#moreTextArea").on("click", function () { //satir ekle
+                $(".formudoldur").addInputArea("<input></input>");
+                   
+            });
+
+           
+
+
+
+                $("#sil").on("click", function () {
+
+                }) 
+                $(".buttonSearch").on("click", function () {
+
+                }) 
+                $(".siralamaIsim", "siralamaSoyIsim").on("click", function () {
+
+                }) 
+                $("kontaklariGoster").on("click", function () {
+
+                })
+                //$("formdanVeriAl").on("click", () => {
+
+                //})
+            });
