@@ -7,83 +7,73 @@
  * arama
  */
 
-function bilgileriTopla (birKisi){
-    let formListeStringi = localStorage.getItem ("kisiBilgileriListesi");
-    let formListe =JSON.parse (formListeStringi);
-    if (formListe == undefined){
-        formListe = new Array();
-    }
-    formListe.values({
-        "firstname":birKisi, "lastname":birKisi, "address":birKisi, "number":birKisi,
-        "zipcode":birKisi, "city":birKisi, "phonenumber":birKisi, "mobilephonenumber":birKisi,
-        "faxnumber":birKisi, "email":birKisi
-    });
-    formListeStringi=JSON.stringify(formListe);
-    localStorage.setItem("kisiBilgileriListesi", formListeStringi);
-    return formListe;
-}
+let root_id = 0;
 
-
-
-
-
-
-/*let firstName = null;
-let lastName = null;
-let address = null;
-let number = 0;
-let zipcode = 0;
-let city = null;
-let phoneNumber = 0;
-let mobilephoneNumber = 0;
-let faxnumber = 0;
-let email = null;
-
-function veriAl() {
-    let firstName = $("#firstname").val();
-    let lastName = $("#lastname").val();
+function bilgileriTopla() {
+    let id = root_id++;
+    let firstName = $("#firstName").val();
+    let lastName = $("#lastName").val();
     let address = $("#address").val();
     let number = $("#number").val();
-    let zipcode = $("#zipcode").val()
-    let city = $("#city").val()
-    let phoneNumber = $("#phoneNumber").val()
-    let mobilephoneNumber = $("#mobilephoneNumber").val()
-    let faxnumber = $("#faxnumber").val()
-    let email = $("#email").val()
+    let zipCode = $("#zipCode").val();
+    let city = $("#city").val();
+    let phoneNumber = $("#phoneNumber").val();
+    let mobilePhoneNumber = $("#mobilePhoneNumber").val();
+    let faxNumber = $("#faxNumber").val();
+    let email = $("#email").val();
     return {
+        id,
         firstName,
         lastName,
         address,
         number,
-        zipcode,
+        zipCode,
         city,
         phoneNumber,
-        mobilephoneNumber,
-        faxnumber,
+        mobilePhoneNumber,
+        faxNumber,
         email
-    }
+    };
+};
+
+function contactSilme(pId) {
+    let contacts = JSON.parse(localStorage.getItem("contacts"));
+    if (contacts) {
+        contacts = contacts.filter(contact => {
+            return contact.id !== pId
+        });
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+    };
+};
+
+function refreshListeners() {
+    $(".deleteContact").click(function () {
+        contactSilme(+$(event.target).data("id"));
+        bilgileriGuncelle();
+    })
 }
 
-function kayitEkleme(veriler) {
-    firstName = veriler.firstName
-    lastName = veriler.lastName
-    address = veriler.address
-    number = veriler.number
-    zipcode = veriler.zipcode
-    city = veriler.city
-    phoneNumber = veriler.phoneNumber
-    mobilephoneNumber = veriler.mobilephoneNumber
-    faxnumber = veriler.faxnumber
-    email = veriler.email
-}
-*/
+function bilgileriGuncelle() {
+    let contacts = JSON.parse(localStorage.getItem("contacts"));
+    if (contacts) {
+        let newDom = renderContact(contacts);
+        $("#rehberListe_area td").html(newDom);
+        refreshListeners();
+    };
+
+};
+
+
+
+
+
+
+
+/*
 function kayitSilme() {
 
 }
 
-function kayitGuncelleme() {
-
-}
 
 function siralama() {
 
@@ -91,4 +81,4 @@ function siralama() {
 
 function arama() {
 
-}
+}*/
