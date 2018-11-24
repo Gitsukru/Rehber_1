@@ -31,29 +31,6 @@ function renderList(bilgiListesi) {
 */
 $(document).ready(function () {
 
-function renderContact(contacts) {
-    let bodyTable = "";
-    for (let contact of contacts) {
-        bodyTable += `
-    <tr id="rehberListe_area td">
-        <td>${contact.id}</td>
-        <td>${contact.firstName}</td>
-        <td>${contact.lastName}</td>
-        <td>${contact.adresse}</td>
-        <td>${contact.number}</td>
-        <td>${contact.zipCode}</td>
-        <td>${contact.city}</td>
-        <td>${contact.phoneNumber}</td>
-        <td>${contact.mobilePhoneNumber}</td>
-        <td>${contact.faxNumber}</td>
-        <td>${contact.email}</td>
-        <td><button class="deleteContact" data-id="${contact.id}">Delete</button></td>
-    </tr>`
-    };
-    return bodyTable;
-};
-
-
     $("#kaydet").on("click", function () {
         let contact = bilgileriTopla();
         if (localStorage.getItem("contacts") !== null) {

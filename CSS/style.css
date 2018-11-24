@@ -104,51 +104,74 @@ main {
 }
 
 table {
-    width: 98%;
+   display: flex;
+   width: 100%;
+   table-layout: auto;
+   flex-direction: column;
     table-layout: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-collapse: collapse;
     border: 1px solid gray;
     margin-top: 20px;
+    white-space: wrap;
 }
-
-tr:hover {
-    background-color: #0000ff;
+thead{
+    display: flex;
+    flex-direction: row;
+    table-layout: auto;
+    width:100%;
+    
+    white-space: wrap;
+    text-align: left;
+}
+th {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid rgb(104, 138, 4);
+    height: 80px;
+    padding: 1%;
+    background-color: rgb(111, 146, 5);
     color: white;
-    transition: all 0.3s
+   width: 100%;
+    white-space: wrap;
 }
-
-tr:nth-child(odd):hover {
-    background-color: blue;
-    color: white;
-}
-
-tr:nth-child(odd) {
-    background-color: rgb(217, 238, 153);
-    color: gray;
-}
-
 th:hover {
     background-color: blue;
     color: white;
     transition: all 0.3s
 }
+tr {
+    display: flex;
+    flex-direction: row;
+    width:100%
+}
 
-th {
-    border: 1px solid rgb(149, 196, 9);
-    height: 80px;
-    padding: 10px;
-    background-color: #A7C941;
-    color: white;
-    text-align: left;
+tbody{
+    table-layout: auto;
+    display: flex;
+    flex-direction: column;
     white-space: wrap;
 }
 
-td {
-    border: 1px solid #A7C941;
-    padding: 10px;
+
+tbody:nth-child(odd) {
+    background-color: rgb(217, 238, 153);
+    color: gray;
 }
 
+
+td {
+    display: flex;
+    border: 1px solid #A7C941;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody:nth-child(odd):hover {
+    background-color: blue;
+    color: white;
+}
 
 
 .sectionRight {

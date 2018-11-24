@@ -18,8 +18,6 @@
         <section class="sectionLeft">
             <div class="telefonRehberi">Telefon Rehberi</div>
             <div class="search_yenikayit">
-
-
                 <div class="search">
                     <form class="formSearch">
                         <input class="inputSearch" type="text" placeholder="Search.." />
@@ -29,31 +27,19 @@
                 <div class="yeniKayit">
                     <button id="yeniKayit">Yeni Kayit</button>
                 </div>
-
-
             </div>
-            <table  id="rehberListe_area td">
-                <tr>
-                    <th>Id</th>
-                    <th class="siralamaIsim">Firstname</th>
-                    <th class="siralamaSoyIsim">Lastname</th>
-                    <th>Address</th>
-                    <th>Number</th>
-                    <th>Zip Code</th>
-                    <th>City</th>
-                    <th>Phone Number</th>
-                    <th>Mobile Number</th>
-                    <th>Fax Number</th>
-                    <th>Email</th>
-                    <th></th>
-                </tr>
+            <table>
+                <thead>
+                    <tr>
 
-                <tr>
-                    <td>
-                        
-                    </td>
+                    </tr>
+                </thead>
+                <tbody id="rehberListe_areatd">
 
-                </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
             </table>
         </section>
 
@@ -89,7 +75,8 @@
                 </div>
                 <div>
                     <label for="mobilePhoneNumber">Mobile Phone Number</label>
-                    <input id="mobilePhoneNumber" name="mobilePhoneNumber" placeholder="Mobile Phone Number" value="0765750915" type="number" />
+                    <input id="mobilePhoneNumber" name="mobilePhoneNumber" placeholder="Mobile Phone Number" value="0765750915"
+                        type="number" />
                     <button id="moreTextArea">⨁</button>
                 </div>
                 <div>
@@ -110,7 +97,7 @@
 
         </section>
 
-        
+
     </main>
     <script src="./JS/model.js"></script>
     <script src="./JS/storage.js"></script>
