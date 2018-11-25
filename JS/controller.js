@@ -29,6 +29,25 @@ function renderList(bilgiListesi) {
     $("#rehberListe_area ").html(tdList.join(""));
 }
 */
+$(".inputSearch").on("input",function(){
+    
+    let searchTerm = $(".inputSearch").val(); //ne ariyoruz onu bul
+    console.log ("searchTerm");
+    let contacts = JSON.parse(localStorage.getItem("contacs"));
+    console.log("contacts");
+    contacts = contacts.filter ((person) => {
+        console.log("filter");
+        
+        return person.firstName.match(searchTerm);
+        return person.lastName.match(searchTerm); //search term mime uyan contactlari icine birak
+        
+    });
+    renderContact(contacts);
+    bilgileriGuncelle(contacts);
+})
+
+
+
 $(document).ready(function () {
 
     $("#kaydet").on("click", function () {
@@ -42,7 +61,6 @@ $(document).ready(function () {
         }
         bilgileriGuncelle();
     });
-
     bilgileriGuncelle();
 });
 

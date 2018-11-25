@@ -35,7 +35,7 @@ function renderContact(contacts) {
                         <td>${contact.id}</td>
                         <td>${contact.firstName}</td>
                         <td>${contact.lastName}</td>
-                        <td>${contact.addresse}</td>
+                        <td>${contact.address}</td>
                         <td>${contact.number}</td>
                         <td>${contact.zipCode}</td>
                         <td>${contact.city}</td>
@@ -51,6 +51,28 @@ function renderContact(contacts) {
     return head + bodyTable + foot;
 };
 
+function bilgileriGuncelle(contacts) { //bu fonksiyon cagrildigi zaman  parametre tanimlandi ise
+    
+    if (!contacts){            //eger tanimlanmadi ise contact undefin geliyor        
+        contacts = JSON.parse(localStorage.getItem("contacts")); // undefine ise git local storage dan al bilgileri
+    }
+    if (contacts) {
+        let newDom = renderContact(contacts);
+        $("#rehberListe_areatd").html(newDom);
+        refreshListeners();
+    };
+
+};
+
+function contactSilme(pId) {
+    let contacts = JSON.parse(localStorage.getItem("contacts"));
+    if (contacts) {
+        contacts = contacts.filter(contact => {
+            return contact.id !== pId
+        });
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+    };
+};
 
 
 let root_id = 0;
@@ -82,15 +104,7 @@ function bilgileriTopla() {
     };
 };
 
-function contactSilme(pId) {
-    let contacts = JSON.parse(localStorage.getItem("contacts"));
-    if (contacts) {
-        contacts = contacts.filter(contact => {
-            return contact.id !== pId
-        });
-        localStorage.setItem("contacts", JSON.stringify(contacts));
-    };
-};
+
 
 function refreshListeners() {
     $(".deleteContact").click(function () {
@@ -99,15 +113,8 @@ function refreshListeners() {
     })
 }
 
-function bilgileriGuncelle() {
-    let contacts = JSON.parse(localStorage.getItem("contacts"));
-    if (contacts) {
-        let newDom = renderContact(contacts);
-        $("#rehberListe_areatd").html(newDom);
-        refreshListeners();
-    };
 
-};
+
 
 
 
