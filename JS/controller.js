@@ -29,21 +29,17 @@ function renderList(bilgiListesi) {
     $("#rehberListe_area ").html(tdList.join(""));
 }
 */
-$(".inputSearch").on("input",function(){
+$(".inputSearch").on("input", function(){
     
     let searchTerm = $(".inputSearch").val(); //ne ariyoruz onu bul
-    console.log ("searchTerm");
-    let contacts = JSON.parse(localStorage.getItem("contacs"));
-    console.log("contacts");
-    contacts = contacts.filter ((person) => {
-        console.log("filter");
+   
+    let contacts = JSON.parse(localStorage.getItem("contacts"));
+    
+    filteredcontacts = contacts.filter(person=>      
         
-        return person.firstName.match(searchTerm);
-        return person.lastName.match(searchTerm); //search term mime uyan contactlari icine birak
-        
-    });
-    renderContact(contacts);
-    bilgileriGuncelle(contacts);
+        person.searchString.match(new RegExp(searchTerm,"i")) != null);
+    
+    bilgileriGuncelle(filteredcontacts);
 })
 
 

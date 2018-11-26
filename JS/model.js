@@ -51,13 +51,13 @@ function renderContact(contacts) {
     return head + bodyTable + foot;
 };
 
-function bilgileriGuncelle(contacts) { //bu fonksiyon cagrildigi zaman  parametre tanimlandi ise
+function bilgileriGuncelle(bgcontacts) { //bu fonksiyon cagrildigi zaman  parametre tanimlandi ise
     
-    if (!contacts){            //eger tanimlanmadi ise contact undefin geliyor        
-        contacts = JSON.parse(localStorage.getItem("contacts")); // undefine ise git local storage dan al bilgileri
+    if (!bgcontacts){            //eger tanimlanmadi ise contact undefin geliyor        
+        bgcontacts = JSON.parse(localStorage.getItem("contacts")); // undefine ise git local storage dan al bilgileri
     }
-    if (contacts) {
-        let newDom = renderContact(contacts);
+    if (bgcontacts) {
+        let newDom = renderContact(bgcontacts);
         $("#rehberListe_areatd").html(newDom);
         refreshListeners();
     };
@@ -89,6 +89,7 @@ function bilgileriTopla() {
     let mobilePhoneNumber = $("#mobilePhoneNumber").val();
     let faxNumber = $("#faxNumber").val();
     let email = $("#email").val();
+    let searchString = firstName+lastName+address;
     return {
         id,
         firstName,
@@ -100,7 +101,8 @@ function bilgileriTopla() {
         phoneNumber,
         mobilePhoneNumber,
         faxNumber,
-        email
+        email,
+        searchString
     };
 };
 
